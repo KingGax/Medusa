@@ -206,7 +206,7 @@ public class LevelSkin extends GaugeSkinBase {
 
     // ******************** Private Methods ***********************************
     private void setBar(final double VALUE) {
-        double factor  = VALUE / gauge.getRange();
+        double factor  = (VALUE - gauge.getMinValue()) / gauge.getRange();
 
         if (gauge.isGradientBarEnabled() && !gauge.getGradientBarStops().isEmpty()) {
             Color color = gauge.getGradientLookup().getColorAt(factor);
